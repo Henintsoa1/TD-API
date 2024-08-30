@@ -1,0 +1,20 @@
+components:
+  schemas:
+    Order:
+      type: object
+      properties:
+        id:
+          type: integer
+        reference:
+          type: string
+        meals:
+          type: array
+          items:
+            $ref: '#/components/schemas/Meal'
+          description: List of meals with quantity ordered.
+        orderDatetime:
+          type: string
+          format: date-time
+      required:
+        - reference
+        - meals
